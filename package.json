@@ -1,0 +1,33 @@
+{
+  "name": "if-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vertvern/if-js-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vertvern/if-js-test/issues"
+  },
+  "homepage": "https://github.com/Vertvern/if-js-test#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+
+    }
+  }
+}
