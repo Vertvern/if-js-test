@@ -22,3 +22,5 @@ test = !!test;
 test = !test;
 // после смены типа значения сперва присвоилось true, затем false
 console.log(test);
+
+
