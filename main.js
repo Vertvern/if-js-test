@@ -23,12 +23,12 @@ test = !test;
 // после смены типа значения сперва присвоилось true, затем false
 console.log(test);
 
-// const arr1 = [2, 3, 5, 8];
-// let y = [];
-// for (let x = 0; x < arr1.length; x++) {
-//   y *= arr1[x];
-// }
-// console.log(y);
+const arr1 = [2, 3, 5, 8];
+let y = 1;
+for (let x = 0; x < arr1.length; x++) {
+  y *= arr1[x];
+}
+console.log(y);
 
 // не работающее произведение массива
 
