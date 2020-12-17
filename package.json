@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint main.js --fix"
+    "lint": "eslint main.js -o ./errors.html -f html"
   },
   "repository": {
     "type": "git",
