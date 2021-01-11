@@ -46,4 +46,56 @@ for (let x = 0; x < arr3.length; x++) {
     console.log(arr3[x]);
   }
 }
+
 // нахождение и вывод в консоль четных чисел
+function min(a, b) {
+  if (a < b) {
+    return a;
+  }
+  return b;
+}
+
+console.log(min(8, 2));
+
+// min max func
+function max(a, b) {
+  if (a < b) {
+    return b;
+  }
+  return a;
+}
+
+console.log(max(5, 4));
+
+// такой способ записи используется чаще или реже?
+function minimum(a, b) {
+  return a < b ? a : b;
+}
+
+console.log(minimum(75, 34));
+
+function palindrome() {
+  const str = 'rammar';
+  const len = str.length;
+  const middle = Math.floor(len / 2);
+  for (let i = 0; i < middle; i++) {
+    if (str[i] !== str[len - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(palindrome());
+// функция палиндрома
+const a = [];
+for (let i = 0; i < 10; ++i) a[i] = Math.floor(Math.random() * 100);
+console.log(a);
+// массив случайных чисел
+const zeroWord = [12, 53, 20, 18, 22, 10, 43, 57, 50, 1];
+for (let i = 0; i < zeroWord.length; i++) {
+  if (zeroWord[i] % 10 === 0) {
+    zeroWord[i] = zeroWord[i].toString().replaceAll('0', 'zero');
+  }
+}
+console.log(zeroWord);
+// нолики, ура
