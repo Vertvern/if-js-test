@@ -85,8 +85,17 @@ function palindrome() {
   }
   return true;
 }
+
 console.log(palindrome());
+
 // функция палиндрома
+function SecondPalindrome(str) {
+  if (str === str.split('').reverse().join('')) {
+    return true;
+  }
+  return false;
+}
+console.log(SecondPalindrome('moon'));
 const a = [];
 for (let i = 0; i < 10; ++i) a[i] = Math.floor(Math.random() * 100);
 console.log(a);
