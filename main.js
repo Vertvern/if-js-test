@@ -74,20 +74,6 @@ function minimum(a, b) {
 
 console.log(minimum(75, 34));
 
-function palindrome() {
-  const str = 'rammar';
-  const len = str.length;
-  const middle = Math.floor(len / 2);
-  for (let i = 0; i < middle; i++) {
-    if (str[i] !== str[len - 1 - i]) {
-      return false;
-    }
-  }
-  return true;
-}
-
-console.log(palindrome());
-
 // функция палиндрома
 function SecondPalindrome(str) {
   if (str === str.split('').reverse().join('')) {
@@ -95,6 +81,7 @@ function SecondPalindrome(str) {
   }
   return false;
 }
+
 console.log(SecondPalindrome('moon'));
 const a = [];
 for (let i = 0; i < 10; ++i) a[i] = Math.floor(Math.random() * 100);
@@ -107,4 +94,18 @@ for (let i = 0; i < zeroWord.length; i++) {
   }
 }
 console.log(zeroWord);
+
 // нолики, ура
+// const sum = (a) => {
+//   return (b) => {
+//     return a + b
+//   };
+// }
+// console.log(sum(5)(2));
+const sum = function g(k) {
+  function f(j) {
+    return k + j;
+  }
+  return f;
+};
+console.log(sum(5)(2));
