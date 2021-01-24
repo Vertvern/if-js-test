@@ -29,5 +29,8 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.20"
   }
 }
