@@ -22,3 +22,7 @@ text1El.addEventListener('click', makeCounter());
 // добавляем к элементу событие клика, передаем цвет через замыкание
 text2El.addEventListener('click', makeCounter());
 text3El.addEventListener('click', makeCounter());
+
+let date  = '2020-11-26';
+let newDate = date.replace(/2020-11-26/, '26.11.2020'); //преобразование даты
+console.log(newDate);
