@@ -1,110 +1,103 @@
-let user = 'John Doe';
-const student = 'Vital';
-// при выводе в консоль оба значения- юзер и студент должны появиться в блоке
-console.log(user);
-console.log(student);
+const text1El = document.getElementById('text1');
+const text2El = document.getElementById('text2');
+const text3El = document.getElementById('text3');
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 
-user = student;
-console.log(user);
-// присвоение нашему юзеру имя студента, получим имя студента
+// function makeCounter() {
+//   let currentCount = 0; // creating counter
+//   return function eventClick(event) {
+//     const evt = event;
+//     evt.target.style.color = colors[currentCount];
+//     // text color changing
+//     if (evt.target.style.color === colors[4]) {
+//       // reset counter
+//       currentCount = -1;
+//     }
+//     return currentCount++;
+//   };
+// }
 
-let test = 1;
-test++;
-// увеличение на 1
-test += 1;
-// уже к двум прибавляем единицу, получаем 3
-console.log(test);
-test--;
-// отнимаем 1
-console.log(test);
-// логично предположить, что будет 2
-test = !!test;
-test = !test;
-// после смены типа значения сперва присвоилось true, затем false
-console.log(test);
+const makeCounter = () => {
+  let count = 0; // creating counter
+  return (event) => {
+    const evt = event;
+    evt.target.style.color = colors[count]; // text color changing
+    count = count === 4 ? 0 : count + 1; // counter reset
+  };
+// example of good code
+};
 
-const arr1 = [2, 3, 5, 8];
-let y = 1;
-for (let x = 0; x < arr1.length; x++) {
-  y *= arr1[x];
-}
-console.log(y);
+/* 23:5 Error Assignment to property of function parameter 'event'.
+no-param-reassign - cant understand properly where is the problem and just reassign 'event' */
+text1El.addEventListener('click', makeCounter());
+// click event added, calling function for coloring text
+text2El.addEventListener('click', makeCounter());
+text3El.addEventListener('click', makeCounter());
 
-// не работающее произведение массива
+const date = '2020-11-26';
+const newDate = date.replace(/2020-11-26/, '26.11.2020'); // data transform
+console.log(newDate);
 
-const arr2 = [2, 5, 8, 15, 0, 6, 20, 3];
-for (let x = !5; x < arr2.length; x++) {
-  // как избежать
-  if (arr2[x] >= 5 && arr2[x] <= 10) {
-    console.log(arr2[x]);
-  }
-}
-// вывод чисел от 5 до 10 включительно
-const arr3 = [2, 5, 8, 15, 0, 6, 20, 3];
-for (let x = 0; x < arr3.length; x++) {
-  if ((arr3[x] % 2) === 0) {
-    console.log(arr3[x]);
-  }
-}
+const data = [
+  {
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
+  },
+  {
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
+  },
+  {
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
+  },
+];
 
-// нахождение и вывод в консоль четных чисел
-function min(a, b) {
-  if (a < b) {
-    return a;
-  }
-  return b;
-}
+const findLocation = (string) => {
+  const locations = data.filter((item) => item.country.includes(string)
+    || item.city.includes(string)
+    || item.hotel.includes(string));
+  // searching our location
+  return locations.map((item) => (`${item.country}, ${item.city}, ${item.hotel}`));
+  // creating new array with location
+};
+console.log(findLocation('Berlin'));
 
-console.log(min(8, 2));
-
-// min max func
-function max(a, b) {
-  if (a < b) {
-    return b;
-  }
-  return a;
-}
-
-console.log(max(5, 4));
-
-// такой способ записи используется чаще или реже?
-function minimum(a, b) {
-  return a < b ? a : b;
-}
-
-console.log(minimum(75, 34));
-
-function palindrome() {
-  const str = 'rammar';
-  const len = str.length;
-  const middle = Math.floor(len / 2);
-  for (let i = 0; i < middle; i++) {
-    if (str[i] !== str[len - 1 - i]) {
-      return false;
-    }
-  }
-  return true;
-}
-
-console.log(palindrome());
-
-// функция палиндрома
-function SecondPalindrome(str) {
-  if (str === str.split('').reverse().join('')) {
-    return true;
-  }
-  return false;
-}
-console.log(SecondPalindrome('moon'));
-const a = [];
-for (let i = 0; i < 10; ++i) a[i] = Math.floor(Math.random() * 100);
-console.log(a);
-// массив случайных чисел
-const zeroWord = [12, 53, 20, 18, 22, 10, 43, 57, 50, 1];
-for (let i = 0; i < zeroWord.length; i++) {
-  if (zeroWord[i] % 10 === 0) {
-    zeroWord[i] = zeroWord[i].toString().replaceAll('0', 'zero');
-  }
-}
-console.log(zeroWord);
-// нолики, ура
+//  declaration
+//  function nameFunc(str){
+//   return str;
+//  }
+//  nameFunc('stroka');
+// // expression
+// const namefunction = (str) => {
+//   return str;
+// }
+// namefunction('stroka2');
